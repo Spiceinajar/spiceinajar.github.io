@@ -1,4 +1,3 @@
-![alt text](https://yt3.googleusercontent.com/_LGiOlhyf32SevZPIRx_zDSAagnGe9El4-1KWoSK3odSxiytOa6Hq84APPc-CzzYcuiv4BlJvQ=s176-c-k-c0x00ffffff-no-rj)
 # Spiceinajar
 
 Hello, I'm a hobbyist game and software developer. I have been programming in python for ~3 years, and have recently been learning other languages like HTML, rust, lua, java, javascript and others. I run a [Youtube channel](https://www.youtube.com/@Spiceinajar/videos) where I primarily make programming and CGI tutorials.
