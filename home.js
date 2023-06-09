@@ -16,3 +16,5 @@ for (x in index) {
     
     `);
 }
+
+document.body.insertAdjacentHTML("beforeend", `<h1>...And more stuff coming soon :)</h1>`);
