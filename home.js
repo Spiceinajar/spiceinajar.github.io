@@ -22,3 +22,5 @@ for (x in index) {
     
     `);
 }
+
+document.body.insertAdjacentHTML("beforeend", `<h1 class="txt" style="text-align: center;">...And more stuff coming in the future :)</h1>`);
