@@ -1,31 +1,26 @@
-<!-- Copyright Spiceinajar. All rights reserved. -->
-<title>Spiceinajar's site</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+var x;
+for (x in index) {
+    document.body.insertAdjacentHTML("beforeend", `
+    
+    <div class="pad" style="width: 50%">
 
-<link rel="stylesheet" href="style.css">
 
-<head>
-    <div style="text-align: center;" back>
-        <h1 style="font-size:10vw; font-family: pixel; color: rgb(0, 199, 0); font-weight: 1;">Spiceinajar</h1>
+    <div style="display: flex;">
+        <h1><a href="creation.html?id=${x}">${index[x]["name"]}</a></h1>
+        <h1 style="font-weight: 50; padding-left:.5%;">(${index[x]["release_year"]})</h1>
     </div>
-</head>
 
-<div style="text-align: center; width: 50%; font-family: 'Segoe UI'; color:rgb(255, 255, 255);" back>
-    <body>
-        <hr>
-    
-        <h1 style="font-weight: 200; font-size: 2vw;">
-            Hello! I am a hobbyist game / software developer. I have roughly 3 years of development experience, mostly with Python. I have other skills such as graphic design, 3D modeling and animation, video / image editing and other things. I also run a YouTube channel where I make primarily CGI and programming tutorials.
-        </h1>
-    
-        <hr>
-    
-        <h1 style="font-size: 2vw;"> <br> Here are some of my major projects: <br><br> </h1>
-    
-    
-        <script src="appindex.js"></script>
-        <script src="home.js"></script>
 
-        <script src="navbar.js"></script>
-    </body>
-</div>
+    <h2>
+        ${index[x]["tagline"]}
+    </h2>
+
+    <img src=${index[x]["banner_link"]}>
+    </div>
+
+    <br>
+    
+    `);
+}
+
+document.body.insertAdjacentHTML("beforeend", `<h1 class="txt" style="text-align: center;">...And more stuff in the future :)</h1>`);
