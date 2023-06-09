@@ -10,6 +10,7 @@ fetch('./appindex.json')
 const appdat = index[id];
 
 document.getElementById('title').textContent = appdat.name;
+document.getElementById('t').textContent = `${appdat.name} by Spiceinajar`;
 document.getElementById('description').textContent = appdat.description;
 document.getElementById('logs').textContent = appdat.logs;
 document.getElementById('banner').style.backgroundImage = `url(${appdat.banner_link})`;
