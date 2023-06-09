@@ -15,5 +15,5 @@ document.getElementById('description').textContent = appdat.description;
 document.getElementById('logs').textContent = appdat.logs;
 document.getElementById('banner').style.backgroundImage = `url(${appdat.banner_link})`;
 document.getElementById('download_btn').onclick = function() {
-    location.href = appdat.download_link;
-  };
+location.href = appdat.download_link;
+};
