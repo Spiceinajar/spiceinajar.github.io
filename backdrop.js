@@ -17,8 +17,8 @@ function drawCircle(ctx, x, y, radius, fill, stroke, strokeWidth) {
 
 var spots;
 
-const loopTime = 100;
 function regen() {
+  let loopTime = canvas.clientWidth / 10;
   canvas.width = canvas.clientWidth;
   canvas.height = document.body.scrollHeight;
 
@@ -56,7 +56,7 @@ function updateAnim(event) {
           x2 = (spot.x - ((mouseX / 16) / spot.depth) / 2)
           y2 = (spot.y - ((mouseY / 16) / spot.depth) / 2)
 
-          if ((Math.sqrt((Math.pow(x-x2,2))+(Math.pow(y-y2,2)))) < 200) {
+          if ((Math.sqrt((Math.pow(x-x2,2))+(Math.pow(y-y2,2)))) < 120) {
             ctx.beginPath(); // Start a new path
             ctx.moveTo(x, y); // Move the pen to (30, 50)
             ctx.lineTo(x2, y2); // Draw a line to (150, 100)
