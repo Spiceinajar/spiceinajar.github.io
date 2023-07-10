@@ -24,7 +24,7 @@ function regen() {
 
   spots = [];
   for (let i = 0; i < loopTime; i++) {
-    spots.push({x:Math.random() * canvas.width, y:Math.random() * canvas.height, rad:Math.floor(Math.random() * (10 - 5 + 1) + 5), depth:Math.random() * 10});
+    spots.push({x:Math.random() * canvas.width, y:Math.random() * canvas.height, rad:Math.floor(Math.random() * (10 - 5 + 1) + 5), depth:Math.random() * 5});
   };
 }
 regen()
