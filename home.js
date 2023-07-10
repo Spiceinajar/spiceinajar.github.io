@@ -2,7 +2,7 @@ var x;
 for (x in index) {
     document.body.insertAdjacentHTML("beforeend", `
     
-    <div class="pad" style="width: 50%">
+    <div class="pad">
 
 
     <div style="display: flex;">
@@ -15,7 +15,7 @@ for (x in index) {
         ${index[x]["tagline"]}
     </h2>
 
-    <img src=${index[x]["banner_link"]}>
+    <img class="card" src=${index[x]["banner_link"]}>
     </div>
 
     <br>
