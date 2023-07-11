@@ -24,15 +24,12 @@ function regen() {
 
   spots = [];
   for (let i = 0; i < loopTime; i++) {
-    spots.push({x:Math.random() * canvas.width, y:Math.random() * canvas.height, rad:Math.floor(Math.random() * (10 - 5 + 1) + 5), depth:Math.random() * 5});
+    spots.push({x:Math.random() * canvas.width, y:Math.random() * canvas.height, rad:Math.floor(Math.random() * (10 - 5 + 1) + 5), depth:Math.random() * 5, velocity:{x:Math.random() - .5, y:Math.random() - .5}});
   };
 }
 regen()
 
-function updateAnim(event) {
-    var mouseX = event.clientX;
-    var mouseY = event.clientY;
-
+function updateAnim() {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 
@@ -45,26 +42,43 @@ function updateAnim(event) {
     for (var s in spots) {
         let spot = spots[s];
 
-        x = (spot.x - ((mouseX / 16) / spot.depth) / 2)
-        y = (spot.y - ((mouseY / 16) / spot.depth) / 2)
+        spots[s].x += spot.velocity.x;
+        spots[s].y += spot.velocity.y;
 
-        drawCircle(ctx, x, y, spot.rad, `rgb(0, 150, 0)`, `rgb(0, 150, 0)`, 1);
+        if (spot.x < 0) {
+          spots[s].velocity.x = -spots[s].velocity.x;
+        }
+        if (spot.y < 0) {
+          spots[s].velocity.y = -spots[s].velocity.y;
+        }
+        if (spot.x > canvas.width) {
+          spots[s].velocity.x = -spots[s].velocity.x;
+        }
+        if (spot.y > canvas.height) {
+          spots[s].velocity.y = -spots[s].velocity.y;
+        }
+
+        x = spot.x
+        y = spot.y
+
+        drawCircle(ctx, x, y, spot.rad, `rgb(0, 100, 0)`, `rgb(0, 100, 0)`, 1);
 
         for (var s in spots) {
           let spot = spots[s];
 
-          x2 = (spot.x - ((mouseX / 16) / spot.depth) / 2)
-          y2 = (spot.y - ((mouseY / 16) / spot.depth) / 2)
+          x2 = spot.x
+          y2 = spot.y
 
           if ((Math.sqrt((Math.pow(x-x2,2))+(Math.pow(y-y2,2)))) < 120) {
-            ctx.beginPath(); // Start a new path
-            ctx.moveTo(x, y); // Move the pen to (30, 50)
-            ctx.lineTo(x2, y2); // Draw a line to (150, 100)
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x2, y2);
             ctx.stroke();
           }
         }
     };
 };
 
-window.onresize = regen;
-document.addEventListener('mousemove', updateAnim);
+setInterval(updateAnim, 16);
+
+//window.onresize = regen;
